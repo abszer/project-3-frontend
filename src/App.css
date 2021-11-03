@@ -5,8 +5,16 @@
 }
 
 .add-svg {
+  /* transition: 0.2s all; */
   width: 5%;
   height: auto;
-  filter: invert(11%) sepia(4%) saturate(118%) hue-rotate(317deg) brightness(99%) contrast(105%);
+  filter: invert(0%) sepia(91%) saturate(7463%) hue-rotate(131deg) brightness(102%) contrast(108%);
+}
 
+.add-svg:hover {
+  /* transition: 0.2s all; */
+  width: 4.9%;
+  height: auto;
+  filter: invert(7%) sepia(4%) saturate(68%) hue-rotate(314deg) brightness(92%) contrast(90%);
+  cursor: pointer;
 }
