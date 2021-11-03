@@ -9,6 +9,7 @@ const App = () => {
       <Header/>
       <div className="addSvg-container">
         <img src={addSvg} className="add-svg" alt="add" onClick={() => {alert('add button clicked')}}/>
+        {/* attribution: <div>Icons made by <a href="https://www.flaticon.com/authors/dmitri13" title="dmitri13">dmitri13</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> */}
       </div>
     </div>
   )
