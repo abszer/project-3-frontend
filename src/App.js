@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import axios from 'axios'
 import Header from './components/header.js'
 import AddCard from './components/addCard'
 import Card from './components/card'
@@ -9,15 +10,26 @@ const App = () => {
 
   const [cardList, setCardList] = useState([])
   const [addBtnHidden, setAddBtnHidden] = useState(false)
+  const [cardsData, setCardsData] = useState([])
 
   const handleAddButtonClick = (e) => {
     setAddBtnHidden(true)
-    setCardList(cardList.concat(<Card key={cardList.length} />))
+    // setCardList(cardList.concat(<Card key={cardList.length} />))
   }
   
   const handleCardSubmit = () => {
     setAddBtnHidden(false)
+    axios.get("https://squadupgames.herokuapp.com/games").then((response) => {
+      setCardsData(response.data)
+    })
   }
+
+  useEffect(() => {
+    axios.get("https://squadupgames.herokuapp.com/games").then((response) => {
+      setCardsData(response.data)
+      console.log(response.data)
+    })
+  }, [])
 
   return (
     <div className="App">
@@ -28,7 +40,13 @@ const App = () => {
         {addBtnHidden ? <AddCard handleCardSubmit={handleCardSubmit}/> : null}      
       </div>
       <div className="card-container">
-        {cardList}
+        {
+          cardsData.map((card) => {
+            return (
+              <Card className="card" card={card} />
+            )
+          })
+        }
       </div>
     </div>
   )
