@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@700&display=swap');
 
+
 .addSvg-container {
   display: flex;
   margin: 20px 0;
@@ -23,4 +24,52 @@
 
 .hide {
   display: none;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+@media only screen and (min-width: 1000px){
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 85%;
+    margin: 0 auto;
+  }
+}
+
+.card {
+  width: 300px;
+  height: 500px;
+  margin: 10px 15px;
+}
+
+.card h4 {
+  text-align: center;
+  background-color: #9bc4cb;
+  margin: 0;
+  padding: 15px 0;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.card img {
+  width: 300px;
+  height: 400px;
+  object-fit: cover;
+  margin: 0;
+}
+
+.card h3 {
+  text-align: center;
+  background-color: #9bc4cb;
+  margin: 0;
+  padding: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
