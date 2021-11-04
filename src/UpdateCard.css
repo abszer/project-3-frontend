@@ -1,0 +1,19 @@
+.update-card{
+    width: 300px;
+    height: 400px;
+    background: black;
+    text-align: center;
+}
+
+.update-card-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height:95%
+}
+.update-card-form button{
+    /* I tried to make the submit button on the update form omit the rounded bottom corners and couldn't figure it out */
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}

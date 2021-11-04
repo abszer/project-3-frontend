@@ -24,6 +24,10 @@ const App = () => {
     })
   }
 
+  const handleCardClick=(event)=>{
+    console.log(event.target);
+  }
+
   useEffect(() => {
     axios.get("https://squadupgames.herokuapp.com/games").then((response) => {
       setCardsData(response.data)
@@ -43,7 +47,7 @@ const App = () => {
         {
           cardsData.map((card) => {
             return (
-              <Card className="card" card={card} />
+              <Card className="card" card={card} setCardsData={setCardsData}/>
             )
           })
         }
