@@ -15,7 +15,7 @@ const App = () => {
     setCardList(cardList.concat(<Card key={cardList.length} />))
   }
   
-  const handleAddBtnVisible = () => {
+  const handleCardSubmit = () => {
     setAddBtnHidden(false)
   }
 
@@ -25,7 +25,7 @@ const App = () => {
       <div className="addSvg-container">
         <img src={addSvg} className={addBtnHidden ? 'hide' : 'add-svg'} alt="add" onClick={handleAddButtonClick}/>
         {/* attribution: <div>Icons made by <a href="https://www.flaticon.com/authors/dmitri13" title="dmitri13">dmitri13</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> */}
-        {addBtnHidden ? <AddCard handleAddBtnVisible={handleAddBtnVisible}/> : null}      
+        {addBtnHidden ? <AddCard handleCardSubmit={handleCardSubmit}/> : null}      
       </div>
       <div className="card-container">
         {cardList}
