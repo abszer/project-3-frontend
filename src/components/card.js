@@ -20,7 +20,7 @@ const Card = ({ card,setCardsData }) => {
      return(
           <div className="card">
                <h4>{card.name}</h4>
-               {updateFormHidden? <UpdateCard setUpdateFormHidden={setUpdateFormHidden}/> :<img src={card.image} onClick={showUpdate}/>}
+               {updateFormHidden? <UpdateCard setUpdateFormHidden={setUpdateFormHidden} card={card} setCardsData={setCardsData}/> :<img src={card.image} onClick={showUpdate}/>}
                
                <h3>{card.description}</h3>
                <button onClick={handleDelete}>Close Request</button>
