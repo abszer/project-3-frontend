@@ -46,7 +46,7 @@
 .card {
   width: 300px;
   height: 500px;
-  margin: 10px 15px;
+  margin: 25px 15px;
 }
 
 .card h4 {
@@ -70,6 +70,22 @@
   background-color: #9bc4cb;
   margin: 0;
   padding: 10px;
+}
+
+.card button{
+  text-align: center;
+  background-color: #9bc4cb;
+  margin: 0;
+  padding: 10px;
+  border:none;
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
+  width:100%;
+  font-size:16px;
+  font-weight: bold;
+}
+.card button:hover{
+  cursor:pointer;
+  background-color:#6F55FF;
+  color:#F5F5F5;
 }
