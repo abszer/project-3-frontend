@@ -8,9 +8,10 @@ import addSvg from './add.png'
 
 const App = () => {
 
-  const [cardList, setCardList] = useState([])
+  // const [cardList, setCardList] = useState([])
   const [addBtnHidden, setAddBtnHidden] = useState(false)
   const [cardsData, setCardsData] = useState([])
+  const [currentUser, setCurrentUser] = useState()
 
   const handleAddButtonClick = (e) => {
     setAddBtnHidden(true)
@@ -28,6 +29,11 @@ const App = () => {
     console.log(event.target);
   }
 
+  const handleUpdateUserSession = (username) => {
+    setCurrentUser(username)
+    console.log(username + " has been passed up to the app component")
+  }
+
   useEffect(() => {
     axios.get("https://squadupgames.herokuapp.com/games").then((response) => {
       setCardsData(response.data)
@@ -37,7 +43,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <Header/>
+      <Header handleUpdateUserSession={handleUpdateUserSession}/>
       <div className="addSvg-container">
         <img src={addSvg} className={addBtnHidden ? 'hide' : 'add-svg'} alt="add" onClick={handleAddButtonClick}/>
         {/* attribution: <div>Icons made by <a href="https://www.flaticon.com/authors/dmitri13" title="dmitri13">dmitri13</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> */}
@@ -47,7 +53,7 @@ const App = () => {
         {
           cardsData.map((card) => {
             return (
-              <Card className="card" card={card} setCardsData={setCardsData}/>
+              <Card className="card" card={card} user={currentUser} setCardsData={setCardsData}/>
             )
           })
         }

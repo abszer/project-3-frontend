@@ -4,7 +4,7 @@ import axios from 'axios'
 import SignUp from './signUp'
 import LogIn from './logIn'
 
-const Header = () => {
+const Header = (props) => {
      const [loggedIn,setLoggedIn]=useState(false)
      const [signUp,setSignUp]=useState(false)
      const [logIn,setLogIn]=useState(false)
@@ -17,6 +17,10 @@ const Header = () => {
      const userLogIn=()=>{
           setSignUp(false)
           setLogIn(true)
+     }
+
+     const passUsernameUp = (username) => {
+          props.handleUpdateUserSession(username)
      }
 
 
@@ -38,7 +42,7 @@ const Header = () => {
                null}
                
                {logIn?
-               <LogIn setLogIn={setLogIn}/>
+               <LogIn passUsernameUp={passUsernameUp} setLogIn={setLogIn}/>
                :
                null}
                
