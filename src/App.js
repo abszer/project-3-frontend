@@ -5,6 +5,8 @@ import AddCard from './components/addCard'
 import Card from './components/card'
 import './App.css'
 import addSvg from './add.png'
+import UsersList from './components/usersList.js'
+
 
 const App = () => {
 
@@ -12,6 +14,7 @@ const App = () => {
   const [addBtnHidden, setAddBtnHidden] = useState(false)
   const [cardsData, setCardsData] = useState([])
   const [currentUser, setCurrentUser] = useState()
+  const [userData,setUserData]=useState([])
 
   const handleAddButtonClick = (e) => {
     setAddBtnHidden(true)
@@ -39,11 +42,15 @@ const App = () => {
       setCardsData(response.data)
       console.log(response.data)
     })
+    axios.get(`https://squadupgames.herokuapp.com/user/`).then((response)=>{
+      setUserData(response.data)
+    })
   }, [])
 
   return (
     <div className="App">
       <Header handleUpdateUserSession={handleUpdateUserSession}/>
+      <UsersList userData={userData}/>
       {
         currentUser ? 
         <div className="addSvg-container">

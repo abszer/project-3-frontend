@@ -20,7 +20,6 @@ const LogIn=(props)=>{
             username:username,
             password,password
         }).then((response)=>{
-            alert("Hey," + response.data.username + "!")
             props.passUsernameUp(response.data.username)
         })
         props.setLogIn(false)
