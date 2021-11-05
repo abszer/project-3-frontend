@@ -3,7 +3,7 @@ import axios from 'axios'
 import '../AddCard.css'
 
 const AddCard = (props) => {
-     
+
      const [newUsername, setNewUsername] = useState('')
      const [newDescription, setNewDescription] = useState('')
      const [newImageURL, setNewImageURL] = useState('')
@@ -28,7 +28,8 @@ const AddCard = (props) => {
                name: newUsername,
                description: newDescription,
                image: newImageURL,
-               rating: newRating
+               rating: newRating,
+               user: props.user
           })
           alert('card was submitted')
           props.handleCardSubmit()
@@ -38,7 +39,7 @@ const AddCard = (props) => {
           <div className="add-card">
                <h3>New Squad Request</h3>
                <form autoComplete="off" onSubmit={handleAddCardOnSubmit} className="add-card-form">
-                    Username: <input type="text" name="name" onChange={handleUsernameOnChange}/><br/>
+                    Game: <input type="text" name="name" onChange={handleUsernameOnChange}/><br/>
                     Request: <input type="text" name="description" onChange={handleDescriptionOnChange}/><br/>
                     Image URL: <input type="text" name="image" onChange={handleImageURLOnChange}/><br/>
                     <button>Submit</button>
