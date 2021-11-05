@@ -32,17 +32,19 @@ h1:hover {
 }
 
 button {
-     background-color: rgb(235, 235, 235);
+     background-color: #FFE381;
+     
      color:rgb(48, 48, 48);
-     font-size: 1em;
+     font-size: .5em;
+     font-family: 'Press Start 2P', cursive;
      border-style: none;
      border-radius: 3px;
-     padding: 5px 25px;
+     padding: 10px 25px;
      margin: 0 5px;
      cursor: pointer;
 }
 
 button:hover {
-     background-color: #FFE381;
+     background-color: rgb(255, 255, 255);
      color:rgb(0, 0, 0);
 }
