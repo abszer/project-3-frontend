@@ -49,3 +49,31 @@ h1:hover {
      background-color: rgb(255, 255, 255);
      color:rgb(0, 0, 0);
 }
+
+@media only screen and (max-width: 830px) {
+     .sign-up-log-in {
+          display: flex;
+          flex-direction: column;
+          position: absolute;
+          bottom: 0px;
+          right: 0px;
+     }
+
+     .sign-up-log-in button {
+          background-color: #FFE381;
+          
+          color:rgb(48, 48, 48);
+          font-size: .5em;
+          font-family: 'Press Start 2P', cursive;
+          border-style: none;
+          border-radius: 3px;
+          padding: 7px 15px;
+          margin: 2px 5px;
+          cursor: pointer;
+     }
+     
+     .sign-up-log-in button:hover {
+          background-color: rgb(255, 255, 255);
+          color:rgb(0, 0, 0);
+     }
+}
