@@ -1,6 +1,9 @@
 import React,{useState} from 'react'
 import axios from 'axios'
 import UpdateCard from './updateCard'
+
+
+
 const Card = ({ card,setCardsData }) => {
 
      const [updateFormHidden,setUpdateFormHidden]=useState(false)
