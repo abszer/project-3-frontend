@@ -1,22 +1,17 @@
-import React,{useState,useEffect} from 'react'
+import React,{useState} from 'react'
 import axios from 'axios'
 
-const UsersList=()=>{
-    const [userData,setUserData]=useState([])
-    
-    useEffect(() => {
-        axios.get(`https://squadupgames.herokuapp.com/user/`).then((response)=>{
-        setUserData(response.data)
-        })
-      }, [])
+const UsersList=({userData})=>{
     
 
     return(
         <div className="users-container">
             {userData.map((user)=>{
+                return(
                 <div className="user">
-                    <h3>user.username</h3>
+                    <h3>{user.username}</h3>
                 </div>
+                )
             })}
         </div>
     )

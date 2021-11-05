@@ -1,10 +1,14 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 import Header from './components/header.js'
+import SignUp from './components/signUp'
+import LogIn from './components/logIn'
 import AddCard from './components/addCard'
 import Card from './components/card'
 import './App.css'
 import addSvg from './add.png'
+import UsersList from './components/usersList.js'
+
 
 const App = () => {
 
@@ -12,6 +16,9 @@ const App = () => {
   const [addBtnHidden, setAddBtnHidden] = useState(false)
   const [cardsData, setCardsData] = useState([])
   const [currentUser, setCurrentUser] = useState()
+  const [userData,setUserData]=useState([])
+  const [signUp,setSignUp]=useState(false)
+  const [logIn,setLogIn]=useState(false)
 
   const handleAddButtonClick = (e) => {
     setAddBtnHidden(true)
@@ -34,16 +41,46 @@ const App = () => {
     console.log(username + " has been passed up to the app component")
   }
 
+  // SignUp LogIn Functions
+
+  const handleSignUpOnClick = (event) => {
+    setLogIn(false)
+    setSignUp(true)
+  }
+
+  const handleLogInOnClick = (event) => {
+    setSignUp(false)
+    setLogIn(true)
+  }
+
   useEffect(() => {
     axios.get("https://squadupgames.herokuapp.com/games").then((response) => {
       setCardsData(response.data)
       console.log(response.data)
     })
+    axios.get(`https://squadupgames.herokuapp.com/user/`).then((response)=>{
+      setUserData(response.data)
+    })
   }, [])
 
   return (
     <div className="App">
-      <Header handleUpdateUserSession={handleUpdateUserSession}/>
+      <Header handleLogInOnClick={handleLogInOnClick} handleSignUpOnClick={handleSignUpOnClick} handleUpdateUserSession={handleUpdateUserSession}/>
+      {
+          signUp?
+          <SignUp setSignUp={setSignUp}/>
+          :
+          null
+      }
+               
+      {
+          logIn?
+          <LogIn passUsernameUp={handleUpdateUserSession} setLogIn={setLogIn}/>
+          :
+          null
+      }
+               
+      <UsersList userData={userData}/>
       {
         currentUser ? 
         <div className="addSvg-container">

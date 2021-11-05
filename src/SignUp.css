@@ -1,0 +1,36 @@
+.sign-up {
+     position: absolute;
+     background-color: rgba(110, 85, 255, 1);
+     right: 10px;
+     width: 300px;
+     height: 100px;
+     margin: 2px 0;
+     padding: 15px 15px;
+     border: 3px solid rgb(37, 37, 37);
+     border-top-style: none;
+     border-bottom-left-radius: 5px;
+     border-bottom-right-radius: 5px;
+}
+
+.sign-up button {
+     position: absolute;
+     left: 25%;
+     bottom: 15%;
+     background-color: #FFE381;
+     
+     color:rgb(48, 48, 48);
+     font-size: .5em;
+     font-family: 'Press Start 2P', cursive;
+     border-style: none;
+     border-radius: 3px;
+     padding: 10px 25px;
+     margin: 0 5px;
+     cursor: pointer;
+}
+
+
+
+.sign-up button:hover {
+     background-color: rgb(255, 255, 255);
+     color:rgb(0, 0, 0);
+}

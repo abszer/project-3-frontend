@@ -1,5 +1,6 @@
 import React,{useState} from 'react'
 import axios from 'axios'
+import '../LogIn.css'
 
 
 const LogIn=(props)=>{
@@ -20,17 +21,16 @@ const LogIn=(props)=>{
             username:username,
             password,password
         }).then((response)=>{
-            alert("Hey," + response.data.username + "!")
             props.passUsernameUp(response.data.username)
         })
         props.setLogIn(false)
     }
 
     return(
-        <div>
+        <div className="log-in">
             <form autoComplete="off" onSubmit={handleLogIn}>
                 Username:<input type='text' name="username" onChange={handleNewUsername}/>
-                Password:<input type='password' name="password" onChange={handleNewPassword}/>
+                Password:<input type='password' name="password" onChange={handleNewPassword}/><br/>
                 <button>Log In</button>
             </form>
         </div>
