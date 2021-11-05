@@ -2,6 +2,7 @@ import React,{useState} from 'react'
 import '../Header.css'
 import axios from 'axios'
 import SignUp from './signUp'
+import LogIn from './logIn'
 
 const Header = () => {
      const [loggedIn,setLoggedIn]=useState(false)
@@ -31,7 +32,16 @@ const Header = () => {
                     <button onClick={userLogIn}>Log In</button>
                </div>
                }
-               <SignUp/>
+               {signUp?
+               <SignUp setSignUp={setSignUp}/>
+               :
+               null}
+               
+               {logIn?
+               <LogIn setLogIn={setLogIn}/>
+               :
+               null}
+               
           </div>
      )
 }

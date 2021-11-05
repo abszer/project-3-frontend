@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import axios from 'axios'
 
 
-const SignUp=({setSignUp})=>{
+const LogIn=({setLogIn})=>{
     const [username,setUsername]=useState()
     const [password,setPassword]=useState()
 
@@ -13,27 +13,27 @@ const SignUp=({setSignUp})=>{
         setPassword(e.target.value)
     }
 
-    const handleSignUp =(e)=>{
+    const handleLogIn =(e)=>{
         e.preventDefault()
-        axios.post(`https://squadupgames.herokuapp.com/user/new`,
+        axios.post(`https://squadupgames.herokuapp.com/user/login`,
         {
             username:username,
             password,password
         }).then(()=>{
-            alert("user created!")
+            alert("Welcome, "+username+"!")
         })
-        setSignUp(false)
+        setLogIn(false)
     }
 
     return(
         <div>
-            <form onSubmit={handleSignUp}>
+            <form onSubmit={handleLogIn}>
                 Username:<input type='text' name="username" onChange={handleNewUsername}/>
                 Password:<input type='text' name="password" onChange={handleNewPassword}/>
-                <button>Create Account</button>
+                <button>Log In</button>
             </form>
         </div>
     )
 }
 
-export default SignUp
+export default LogIn
