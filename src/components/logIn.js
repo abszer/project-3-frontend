@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import axios from 'axios'
 
 
-const LogIn=({setLogIn})=>{
+const LogIn=(props)=>{
     const [username,setUsername]=useState()
     const [password,setPassword]=useState()
 
@@ -19,17 +19,18 @@ const LogIn=({setLogIn})=>{
         {
             username:username,
             password,password
-        }).then(()=>{
-            alert("Welcome, "+username+"!")
+        }).then((response)=>{
+            alert("Hey," + response.data.username + "!")
+            props.passUsernameUp(response.data.username)
         })
-        setLogIn(false)
+        props.setLogIn(false)
     }
 
     return(
         <div>
-            <form onSubmit={handleLogIn}>
+            <form autoComplete="off" onSubmit={handleLogIn}>
                 Username:<input type='text' name="username" onChange={handleNewUsername}/>
-                Password:<input type='text' name="password" onChange={handleNewPassword}/>
+                Password:<input type='password' name="password" onChange={handleNewPassword}/>
                 <button>Log In</button>
             </form>
         </div>
