@@ -25,13 +25,14 @@ h1:hover {
      cursor: pointer;
 }
 
+/* add media query to stack buttons on mobile devices */
 .sign-up-log-in {
      position: absolute;
      bottom: 5px;
      right: 15px;
 }
 
-button {
+.sign-up-log-in button {
      background-color: #FFE381;
      
      color:rgb(48, 48, 48);
@@ -44,7 +45,7 @@ button {
      cursor: pointer;
 }
 
-button:hover {
+.sign-up-log-in button:hover {
      background-color: rgb(255, 255, 255);
      color:rgb(0, 0, 0);
 }
