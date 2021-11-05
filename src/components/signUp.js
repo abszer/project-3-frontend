@@ -26,7 +26,7 @@ const SignUp=({setSignUp})=>{
     }
 
     return(
-        <div>
+        <div className="sign-up">
             <form onSubmit={handleSignUp}>
                 Username:<input type='text' name="username" onChange={handleNewUsername}/>
                 Password:<input type='text' name="password" onChange={handleNewPassword}/>

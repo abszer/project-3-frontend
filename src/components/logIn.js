@@ -26,7 +26,7 @@ const LogIn=(props)=>{
     }
 
     return(
-        <div>
+        <div className="log-in">
             <form autoComplete="off" onSubmit={handleLogIn}>
                 Username:<input type='text' name="username" onChange={handleNewUsername}/>
                 Password:<input type='password' name="password" onChange={handleNewPassword}/>
