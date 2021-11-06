@@ -1,0 +1,29 @@
+.users-container {
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+     gap: 20px;
+     background-color: #4b4e64;
+     border-style: inset;
+     width: 15%;
+     height: 50px;
+     margin: 15px auto;
+     overflow-x: hidden;
+}
+
+.users-container h3 {
+     animation-name: scrolleffect;
+     animation-duration: 5s;
+     animation-timing-function: linear;
+     animation-iteration-count: infinite;
+     animation-direction: alternate-reverse;
+}
+
+@keyframes scrolleffect {
+     0%{
+          transform: translateX(5px);
+     }
+     100% {
+          transform: translateX(-50px)
+     }
+}

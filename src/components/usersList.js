@@ -1,5 +1,6 @@
 import React,{useState} from 'react'
 import axios from 'axios'
+import '../Users.css'
 
 const UsersList=({userData})=>{
     
@@ -8,9 +9,9 @@ const UsersList=({userData})=>{
         <div className="users-container">
             {userData.map((user)=>{
                 return(
-                <div className="user">
+                
                     <h3>{user.username}</h3>
-                </div>
+                
                 )
             })}
         </div>
