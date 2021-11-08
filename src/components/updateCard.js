@@ -8,7 +8,7 @@ const UpdateCard=({setUpdateFormHidden,card,setCardsData, showUsers, user })=>{
     const [newUsername, setNewUsername] = useState(card.name)
     const [newDescription, setNewDescription] = useState(card.description)
     const [newImageURL, setNewImageURL] = useState(card.image)
-    const [newPlayer, setNewPlayer] = useState(card.players)
+    const [newPlayer, setNewPlayer] = useState('')
 
     const handleUsernameOnChange = (e) => {
         setNewUsername(e.target.value)
@@ -44,13 +44,15 @@ const UpdateCard=({setUpdateFormHidden,card,setCardsData, showUsers, user })=>{
     const handleAddUsername = (e) => {
         e.preventDefault()
         setUpdateFormHidden(false)
-        axios.put(`https://squadupgames.herokuapp.com/games/${card._id}`,{
+        if(newPlayer !== ""){
+            axios.put(`https://squadupgames.herokuapp.com/games/${card._id}`,{
             players: newPlayer
         }).then((response=>{
             axios.get("https://squadupgames.herokuapp.com/games").then((response) => {
                 setCardsData(response.data)
                })
         }))
+        }
     }
 
     if(user === card.user){
@@ -90,6 +92,7 @@ const UpdateCard=({setUpdateFormHidden,card,setCardsData, showUsers, user })=>{
     }else{
         return <img src={card.image} />
     }
+    
     
 }
 
