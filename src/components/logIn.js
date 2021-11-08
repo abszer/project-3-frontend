@@ -4,8 +4,8 @@ import '../LogIn.css'
 
 
 const LogIn=(props)=>{
-    const [username,setUsername]=useState()
-    const [password,setPassword]=useState()
+    const [username,setUsername]=useState('')
+    const [password,setPassword]=useState('')
 
     const handleNewUsername=(e)=>{
         setUsername(e.target.value)

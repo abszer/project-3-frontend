@@ -18,14 +18,8 @@ const Card = ({ card, setCardsData, user }) => {
           })
      }
 
-     const showUpdate=()=>{
-          if(user === card.user){
-               setUpdateFormHidden(true)
-          }
-          if(user !== card.user){
-               setShowUsers(true)
-          }
-          
+     const showUpdate=(cardOwner)=>{
+          setUpdateFormHidden(true)
      }
 
 
@@ -35,11 +29,8 @@ const Card = ({ card, setCardsData, user }) => {
                
                {/* {updateFormHidden && user === card.user ? <UpdateCard setUpdateFormHidden={setUpdateFormHidden} card={card} setCardsData={setCardsData}/> : <img src={card.image} onClick={showUpdate}/>} */}
                {
-                    updateFormHidden && user === card.user ? <UpdateCard setUpdateFormHidden={setUpdateFormHidden} card={card} setCardsData={setCardsData}/> : <img src={card.image} onClick = {showUpdate} />
+                    updateFormHidden ? <UpdateCard setUpdateFormHidden={setUpdateFormHidden} card={card} user={user} setCardsData={setCardsData}/> : <img src={card.image} onClick={()=>{showUpdate(card.user)}} />
                }
-               {/* {
-                    user ? <img src={card.img} /> : null
-               } */}
                {/* // add 2nd conditional check ot else: if user, allow for adding of usernames to back of card */}
                <h3>{card.description}</h3>
                {
