@@ -10,10 +10,20 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    height:95%
+    height:95%;
+    color: white;
 }
 .update-card-form button{
     /* I tried to make the submit button on the update form omit the rounded bottom corners and couldn't figure it out */
     border-bottom-right-radius: 0px;
     border-bottom-left-radius: 0px;
 }
+
+.add-username-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height:95%;
+    color: white;
+}
+
