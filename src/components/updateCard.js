@@ -93,6 +93,7 @@ const UpdateCard=({setUpdateFormHidden,card,setCardsData, showUsers, user })=>{
         return <img src={card.image} />
     }
     
+    
 }
 
 export default UpdateCard
