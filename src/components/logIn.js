@@ -19,7 +19,7 @@ const LogIn=(props)=>{
         axios.post(`https://squadupgames.herokuapp.com/user/login`,
         {
             username:username,
-            password,password
+            password:password
         }).then((response)=>{
             props.passUsernameUp(response.data.username)
         })
