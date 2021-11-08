@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 .users-container {
      display: flex;
      flex-direction: row;
@@ -5,10 +7,13 @@
      gap: 20px;
      background-color: #4b4e64;
      border-style: inset;
-     width: 15%;
+     width: 85%;
      height: 50px;
      margin: 15px auto;
-     overflow-x: hidden;
+     overflow: hidden;
+     justify-content: center;
+     font-family: 'Press Start 2P';
+     font-size: .8em;
 }
 
 .users-container h3 {
@@ -24,6 +29,30 @@
           transform: translateX(5px);
      }
      100% {
-          transform: translateX(-50px)
+          transform: translateX(80px)
      }
+}
+
+.blue {
+     color: rgb(0, 26, 255);
+}
+
+.orange {
+     color: rgb(255, 136, 0);
+}
+
+.yellow {
+     color: rgb(255, 238, 0);
+}
+
+.pink {
+     color: rgb(255, 0, 200);
+}
+
+.green {
+     color: rgb(153, 255, 0);
+}
+
+.purple {
+     color: rgb(196, 7, 196);
 }
